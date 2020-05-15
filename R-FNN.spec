@@ -4,7 +4,7 @@
 #
 Name     : R-FNN
 Version  : 1.1.3
-Release  : 28
+Release  : 29
 URL      : https://cran.r-project.org/src/contrib/FNN_1.1.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/FNN_1.1.3.tar.gz
 Summary  : Fast Nearest Neighbor Search Algorithms and Applications
@@ -12,7 +12,6 @@ Group    : Development/Tools
 License  : GPL-2.0+ LGPL-2.1
 Requires: R-FNN-lib = %{version}-%{release}
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 including KNN classification, regression and information measures are implemented.
@@ -27,21 +26,22 @@ lib components for the R-FNN package.
 
 %prep
 %setup -q -c -n FNN
+cd %{_builddir}/FNN
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571831353
+export SOURCE_DATE_EPOCH=1589520006
 
 %install
-export SOURCE_DATE_EPOCH=1571831353
+export SOURCE_DATE_EPOCH=1589520006
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
