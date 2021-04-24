@@ -4,7 +4,7 @@
 #
 Name     : R-FNN
 Version  : 1.1.3
-Release  : 33
+Release  : 34
 URL      : https://cran.r-project.org/src/contrib/FNN_1.1.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/FNN_1.1.3.tar.gz
 Summary  : Fast Nearest Neighbor Search Algorithms and Applications
